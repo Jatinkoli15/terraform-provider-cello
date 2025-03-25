@@ -35,12 +35,12 @@ func Provider() *schema.Provider {
 			},
 		},
 		ResourcesMap: map[string]*schema.Resource{
-			"tir_notebook":        notebook.ResourceNode(),
-			"tir_eos":             dataset.ResourceEOS(),
-			"tir_modelRepository": modelRepo.ResourceModelRepo(),
-			"tir_modelEndpoint":   modelEndpoint.ResourceModel(),
-			"tir_integration":     integration.ResourceModelRepo(),
-			"tir_privateCluster":  privateCluster.ResourcePrivateCluster(),
+			"cello_notebook":        notebook.ResourceNode(),
+			"cello_eos":             dataset.ResourceEOS(),
+			"cello_modelRepository": modelRepo.ResourceModelRepo(),
+			"cello_modelEndpoint":   modelEndpoint.ResourceModel(),
+			"cello_integration":     integration.ResourceModelRepo(),
+			"cello_privateCluster":  privateCluster.ResourcePrivateCluster(),
 		},
 		DataSourcesMap: map[string]*schema.Resource{
 			"tir_notebook":       notebook.DataSourceImages(),
