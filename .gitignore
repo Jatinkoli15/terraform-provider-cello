@@ -1,0 +1,7 @@
+main.tf
+terraform.tfstate
+terraform.tfstate.backup
+.terraform
+.terraform.lock.hcl
+terraform-provider-e2etir
+github.com/e2eterraformprovider/github.com/e2eterraformprovider/github.com/e2eterraformprovider/github.com/e2eterraformprovider/github.com/e2eterraformprovider/github.com/e2eterraformprovider/github.com/e2eterraformprovider/terraform-provider-tir

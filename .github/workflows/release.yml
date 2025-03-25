@@ -1,0 +1,46 @@
+name: release
+on:
+  push:
+    tags:
+      - 'v*'  # Trigger on version tags like v1.0.0
+
+permissions:
+  contents: write  # Required for creating and managing release assets
+
+jobs:
+  goreleaser:
+    runs-on: ubuntu-latest  # Use the latest stable version of Ubuntu
+    
+    steps:
+      - 
+        name: Checkout
+        uses: actions/checkout@v3  # Use the latest stable version of checkout action
+
+      - 
+        name: Unshallow
+        run: git fetch --prune --unshallow  # Fetch full history
+
+      - 
+        name: Set up Go
+        uses: actions/setup-go@v3  # Use the latest stable version of setup-go action
+        with:
+          go-version-file: 'go.mod'
+          cache: true
+
+      - 
+        name: Import GPG key
+        uses: crazy-max/ghaction-import-gpg@v5  # Use the latest stable version of GPG action
+        id: import_gpg
+        with:
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.PASSPHRASE }}
+
+      - 
+        name: Run GoReleaser
+        uses: goreleaser/goreleaser-action@v2  # Use the latest stable version of goreleaser action
+        with:
+          version: latest
+          args: release --clean
+        env:
+          GPG_FINGERPRINT: ${{ steps.import_gpg.outputs.fingerprint }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

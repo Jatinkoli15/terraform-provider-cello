@@ -1,0 +1,453 @@
+
+
+  {
+    "auto_scale_policy": {
+      "min_replicas": 1,
+      "max_replicas": 2,
+      "rules": [
+        {
+          "metric": "",
+          "condition_type": "limit",
+          "value": 100,
+          "watch_period": 60,
+          "granularity": 1,
+          "window": 1
+        }
+      ]
+    },
+    "stability_period": 300,
+    "cluster_type": "tir-cluster",
+    "committed_replicas": 0,
+    "custom_endpoint_details": {
+      "service_port": false,
+      "metric_port": false
+    },
+    "container": {
+      "container_name": "vllm/vllm-openai:latest",
+      "container_type": "public",
+      "private_image_details": {}
+    },
+    "advance_config": {
+      "image_pull_policy": "Always",
+      "is_readiness_probe_enabled": false,
+      "is_liveness_probe_enabled": false
+    },
+    "liveness_probe": {
+      "protocol": "http",
+      "initial_delay_seconds": 10,
+      "success_threshold": 1,
+      "failure_threshold": 3,
+      "port": 8080,
+      "path": "/metrics",
+      "period_seconds": 10,
+      "timeout_seconds": 10
+    },
+    "readiness_probe": {
+      "protocol": "http",
+      "initial_delay_seconds": 10,
+      "success_threshold": 1,
+      "failure_threshold": 3,
+      "port": 8080,
+      "path": "/health",
+      "period_seconds": 10,
+      "timeout_seconds": 10
+    },
+    "metric_port": false,
+    "public_ip": "no",
+    "resource_details": {
+      "disk_size": 100,
+      "mount_path": "",
+      "env_variables": []
+    },
+    "service_port": false,
+    "dataset_id": null,
+    "dataset_path": "",
+    "detailed_info": {
+      "commands": "",
+      "args": "",
+      "hugging_face_id": "BAAI/AquilaChat-7B",
+      "tokenizer": "",
+      "server_version": "",
+      "world_size": 1
+    },
+    "engine_args": {
+      "tokenizer": "sdfs",
+      "block_size": 4,
+      "chat_template": "asdf",
+      "enforce_eager": true,
+      "max_model_length": 1,
+      "max_parallel_loading_workers": 1,
+      "skip_tokenizer_init": true
+    },
+    "error_log": true,
+    "hugging_face_id": "BAAI/AquilaChat-7B",
+    "info_log": true,
+    "log_verbose_level": 1,
+    "model_serve_type": "",
+    "server_version": "",
+    "tokenizer": "",
+    "warning_log": true,
+    "world_size": 1,
+    "disk_path": "/mnt/models",
+    "framework": "vllm",
+    "is_auto_scale_enabled": true,
+    "model_id": null,
+    "model_load_integration_id": 609,
+    "name": "vllm-030411182727",
+    "path": "",
+    "replica": 1,
+    "sfs_path": "/shared/.cache",
+    "sku_id": 40,
+    "sku_item_price_id": 97,
+    "storage_type": "disk"
+  }
+  
+
+
+//-???????????????
+  
+  {
+    "name": "vllm-030411461616",
+    "custom_endpoint_details": {
+      "service_port": false,
+      "metric_port": false,
+      "container": {
+        "container_name": "vllm/vllm-openai:latest",
+        "container_type": "public",
+        "private_image_details": {},
+        "advance_config": {
+          "image_pull_policy": "Always",
+          "is_readiness_probe_enabled": false,
+          "is_liveness_probe_enabled": false,
+          "readiness_probe": {
+            "protocol": "http",
+            "initial_delay_seconds": 10,
+            "success_threshold": 1,
+            "failure_threshold": 3,
+            "port": 8080,
+            "period_seconds": 10,
+            "timeout_seconds": 10,
+            "path": "/health",
+            "grpc_service": "",
+            "commands": ""
+          },
+          "liveness_probe": {
+            "protocol": "http",
+            "initial_delay_seconds": 10,
+            "success_threshold": 1,
+            "failure_threshold": 3,
+            "port": 8080,
+            "period_seconds": 10,
+            "timeout_seconds": 10,
+            "path": "/metrics",
+            "grpc_service": "",
+            "commands": ""
+          }
+        }
+      },
+      "resource_details": {
+        "disk_size": 100,
+        "mount_path": "",
+        "env_variables": [
+          {
+            "key": "gdf",
+            "value": "sdfsdf",
+            "required": true,
+            "disabled": {
+              "key": false,
+              "value": false
+            }
+          },
+          {
+            "key": "fgsdfg",
+            "value": "dgfsd",
+            "required": true,
+            "disabled": {
+              "key": false,
+              "value": false
+            }
+          }
+        ]
+      },
+      "public_ip": "no"
+    },
+    "model_id": null,
+    "replica": 1,
+    "committed_replicas": 1,
+    "path": "",
+    "framework": "vllm",
+    "is_auto_scale_enabled": true,
+    "auto_scale_policy": {
+      "min_replicas": 1,
+      "max_replicas": 2,
+      "rules": [
+        {
+          "metric": "concurrency",
+          "condition_type": "limit",
+          "value": 100,
+          "watch_period": 60,
+          "granularity": 1,
+          "window": 1
+        }
+      ],
+      "stability_period": 300
+    },
+    "detailed_info": {
+      "commands": "",
+      "args": "",
+      "hugging_face_id": "Snowflake/snowflake-arctic-base",
+      "tokenizer": "",
+      "server_version": "",
+      "world_size": 1,
+      "error_log": true,
+      "info_log": true,
+      "warning_log": true,
+      "log_verbose_level": 1,
+      "model_serve_type": "",
+      "engine_args": {
+        "seed": 2,
+        "data_type": "float16",
+        "max_loras": 3,
+        "tokenizer": "sdfg",
+        "block_size": 1,
+        "rope_theta": 1,
+        "swap_space": 5,
+        "enable_lora": true,
+        "load_format": "safetensors",
+        "max_log_len": 1,
+        "max_logprobs": 20,
+        "max_num_seqs": 256,
+        "quantization": "awq",
+        "rope_scaling": "rtrdg",
+        "chat_template": "fsgd",
+        "enforce_eager": true,
+        "max_cpu_loras": 1,
+        "max_lora_rank": 17,
+        "lora_data_type": "auto",
+        "tokenizer_mode": "mistral",
+        "preemption_mode": "sdfg",
+        "enable_lora_bias": false,
+        "max_model_length": 6,
+        "tool_call_parser": "",
+        "disable_log_stats": true,
+        "speculative_model": "fg",
+        "trust_remote_code": true,
+        "kv_cache_data_type": "fp8_e4m3",
+        "tokenizer_revision": "sdfg",
+        "fully_sharded_loras": false,
+        "num_lookahead_slots": 4,
+        "skip_tokenizer_init": false,
+        "tokenizer_pool_size": 1,
+        "tokenizer_pool_type": "ray",
+        "disable_log_requests": false,
+        "enable_prefix_caching": true,
+        "lora_extra_vocab_size": 257,
+        "disable_sliding_window": true,
+        "enable_chunked_prefill": true,
+        "gpu_memory_utilization": 1,
+        "max_num_batched_tokens": 6,
+        "max_seq_len_to_capture": 8193,
+        "num_speculative_tokens": 1,
+        "scheduler_delay_factor": 1,
+        "enable_auto_tool_choice": false,
+        "guided_decoding_backend": "lm-format-enforcer",
+        "ngram_prompt_lookup_max": 1,
+        "ngram_prompt_lookup_min": 1,
+        "num_gpu_blocks_override": 1,
+        "quantization_param_path": "",
+        "disable_custom_all_reduce": true,
+        "long_lora_scaling_factors": "f",
+        "model_loader_extra_config": "sfdgdf",
+        "speculative_max_model_len": 1,
+        "tokenizer_pool_extra_config": "fds",
+        "distributed_executor_backend": "mp",
+        "max_parallel_loading_workers": 5,
+        "spec_decoding_acceptance_method": "rejection_sampler",
+        "speculative_disable_by_batch_size": 1,
+        "speculative_draft_tensor_parallel_size": 1,
+        "typical_acceptance_sampler_posterior_alpha": 1.3,
+        "typical_acceptance_sampler_posterior_threshold": 0.19
+      }
+    },
+    "model_load_integration_id": 609,
+    "dataset_id": null,
+    "dataset_path": "",
+    "cluster_type": "tir-cluster",
+    "storage_type": "disk",
+    "sfs_path": "/shared/.cache",
+    "disk_path": "/mnt/models",
+    "sku_id": 40,
+    "sku_item_price_id": 695,
+    "next_sku_item_price_id": null,
+    "committed_instance_policy": "auto_terminate"
+  }
+  
+
+
+
+//-??????????????????????????????????????????????????????
+
+
+  {
+    "custom_endpoint_details": {
+      "service_port": false,
+      "metric_port": false,
+      "container": {
+        "container_name": "aimle2e/tritonserver:24.02-py3-01",
+        "container_type": "public",
+        "private_image_details": {},
+        "advance_config": {
+          "image_pull_policy": "Always",
+          "is_readiness_probe_enabled": false,
+          "is_liveness_probe_enabled": false,
+          "readiness_probe": {
+            "protocol": "http",
+            "initial_delay_seconds": 10,
+            "success_threshold": 1,
+            "failure_threshold": 3,
+            "port": 8080,
+            "period_seconds": 10,
+            "timeout_seconds": 10,
+            "path": "/health",
+            "grpc_service": "",
+            "commands": ""
+          },
+          "liveness_probe": {
+            "protocol": "http",
+            "initial_delay_seconds": 10,
+            "success_threshold": 1,
+            "failure_threshold": 3,
+            "port": 8080,
+            "period_seconds": 10,
+            "timeout_seconds": 10,
+            "path": "/metrics",
+            "grpc_service": "",
+            "commands": ""
+          }
+        }
+      },
+      "resource_details": {
+        "disk_size": 100,
+        "mount_path": "",
+        "env_variables": [
+          {
+            "key": "s",
+            "value": "s",
+            "required": false,
+            "disabled": {
+              "key": false,
+              "value": false
+            }
+          }
+        ],
+        "public_ip": "no"
+      }
+    },
+    
+    
+  }
+  
+
+
+  {
+    "name": "vllm-031215432323",
+    "custom_endpoint_details": {
+      "service_port": false,
+      "metric_port": false,
+      "container": {
+        "container_name": "vllm/vllm-openai:latest",
+        "container_type": "public",
+        "private_image_details": {},
+        "advance_config": {
+          "image_pull_policy": "Always",
+          "is_readiness_probe_enabled": false,
+          "is_liveness_probe_enabled": false,
+          "readiness_probe": {
+            "protocol": "http",
+            "initial_delay_seconds": 10,
+            "success_threshold": 1,
+            "failure_threshold": 3,
+            "port": 8080,
+            "period_seconds": 10,
+            "timeout_seconds": 10,
+            "path": "/health",
+            "grpc_service": "",
+            "commands": ""
+          },
+          "liveness_probe": {
+            "protocol": "http",
+            "initial_delay_seconds": 10,
+            "success_threshold": 1,
+            "failure_threshold": 3,
+            "port": 8080,
+            "period_seconds": 10,
+            "timeout_seconds": 10,
+            "path": "/metrics",
+            "grpc_service": "",
+            "commands": ""
+          }
+        }
+      },
+      "resource_details": {
+        "disk_size": 100,
+        "mount_path": "",
+        "env_variables": [
+          {
+            "key": "HF_HOME",
+            "value": "/mnt/models/.cache",
+            "required": true,
+            "disabled": {
+              "key": true,
+              "value": false
+            }
+          }
+        ]
+      },
+      "public_ip": "no"
+    },
+    "model_id": null,
+    "replica": 1,
+    "committed_replicas": 0,
+    "path": "",
+    "framework": "vllm",
+    "is_auto_scale_enabled": false,
+    "auto_scale_policy": {
+      "min_replicas": 1,
+      "max_replicas": 1,
+      "rules": [
+        {
+          "metric": "",
+          "condition_type": "limit",
+          "value": 100,
+          "watch_period": 60,
+          "granularity": 1,
+          "window": 1
+        }
+      ],
+      "stability_period": 300
+    },
+    "detailed_info": {
+      "commands": "",
+      "args": "",
+      "hugging_face_id": "BAAI/Aquila-7B",
+      "tokenizer": "",
+      "server_version": "",
+      "world_size": 1,
+      "error_log": true,
+      "info_log": true,
+      "warning_log": true,
+      "log_verbose_level": 1,
+      "model_serve_type": "",
+      "engine_args": {}
+    },
+    "model_load_integration_id": 609,
+    "dataset_id": null,
+    "dataset_path": "",
+    "cluster_type": "tir-cluster",
+    "storage_type": "disk",
+    "sfs_path": "/shared",
+    "disk_path": "/mnt/models",
+    "sku_id": 40,
+    "sku_item_price_id": 97
+  }
+  
