@@ -1,4 +1,4 @@
-module github.com/e2eterraformprovider/terraform-provider-tir
+module github.com/jatinkoli15/terraform-provider-cello
 
 go 1.23.5
 

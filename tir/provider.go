@@ -1,14 +1,14 @@
 package e2e
 
 import (
-	"github.com/e2eterraformprovider/terraform-provider-tir/client"
-	"github.com/e2eterraformprovider/terraform-provider-tir/tir/dataset"
-	"github.com/e2eterraformprovider/terraform-provider-tir/tir/integration"
-	"github.com/e2eterraformprovider/terraform-provider-tir/tir/modelEndpoint"
-	"github.com/e2eterraformprovider/terraform-provider-tir/tir/modelRepo"
-	"github.com/e2eterraformprovider/terraform-provider-tir/tir/notebook"
-	"github.com/e2eterraformprovider/terraform-provider-tir/tir/privateCluster"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
+	"github.com/jatinkoli15/terraform-provider-cello/client"
+	"github.com/jatinkoli15/terraform-provider-cello/tir/dataset"
+	"github.com/jatinkoli15/terraform-provider-cello/tir/integration"
+	"github.com/jatinkoli15/terraform-provider-cello/tir/modelEndpoint"
+	"github.com/jatinkoli15/terraform-provider-cello/tir/modelRepo"
+	"github.com/jatinkoli15/terraform-provider-cello/tir/notebook"
+	"github.com/jatinkoli15/terraform-provider-cello/tir/privateCluster"
 )
 
 // Provider function defines the schema for authentication.

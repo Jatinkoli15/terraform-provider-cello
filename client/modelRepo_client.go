@@ -7,7 +7,8 @@ import (
 	"io"
 	"log"
 	"net/http"
-	"github.com/e2eterraformprovider/terraform-provider-tir/models"
+
+	"github.com/jatinkoli15/terraform-provider-cello/models"
 )
 
 func (c *Client) NewRepo(item *models.ModelRepo, projectID string, teamID string, activeIAM string) (map[string]interface{}, error) {

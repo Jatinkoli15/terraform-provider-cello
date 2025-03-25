@@ -7,9 +7,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/e2eterraformprovider/terraform-provider-tir/models"
+	"github.com/jatinkoli15/terraform-provider-cello/models"
 
-	"github.com/e2eterraformprovider/terraform-provider-tir/client"
+	"github.com/jatinkoli15/terraform-provider-cello/client"
 
 	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
@@ -336,8 +336,8 @@ func resourceReadNode(ctx context.Context, d *schema.ResourceData, m interface{}
 	plan := sku_details["plan"].(map[string]interface{})
 	d.Set("created_at", data["created_at"].(string))
 	d.Set("status", data["status"].(string))
-	d.Set("image_name", image_details["image_name"])
-	d.Set("image_version", image_details["image_version"])
+	d.Set("image_name", image_details["name"])
+	d.Set("image_version", image_details["version"])
 	d.Set("sku_name", specs["name"])
 	d.Set("sku_type", plan["sku_type"])
 	d.Set("committed_days", plan["committed_days"])

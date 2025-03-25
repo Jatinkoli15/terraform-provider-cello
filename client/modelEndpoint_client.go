@@ -8,8 +8,9 @@ import (
 	"log"
 	"net/http"
 	"strconv"
-	"github.com/e2eterraformprovider/terraform-provider-tir/models"
+
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
+	"github.com/jatinkoli15/terraform-provider-cello/models"
 )
 
 func (c *Client) NewEndoint(item *models.ModelEndpoint, projectID string, teamID string, activeIAM string) (map[string]interface{}, error) {

@@ -8,7 +8,28 @@ description: |-
 
 # tir_privateCluster (Resource)
 
+Private Cluster enables the creation of a dedicated environment with a predefined allocation of RAM, CPU, and GPU resources. The pricing for the Private Cluster is fixed, unaffected by the actual usage percentage of the allocated resources. Additionally, deploying Nodes, Inference engines, or Vector Databases within the Private Cluster incurs no extra charges.
 
+
+## Example Usage
+
+```hcl
+
+
+resource "e2e_privateCluster" "name" {
+  nodes_count = 1
+  sku_name = "A100"
+  sku_type = "hourly"
+  location = "Delhi"
+  currency = "INR"
+  committed_days = 0
+  committed_instance_policy = "auto_terminate" / "auto_renew" / "convert_to_hourly_billing" full only incase of sku_type = committed
+    team_id = <team_id : string>
+    project_id = <project_id:string>
+    active_iam = <active_iam:string>
+}
+
+```
 
 
 

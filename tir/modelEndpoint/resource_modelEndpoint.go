@@ -8,12 +8,13 @@ import (
 	"math"
 	"strconv"
 	"strings"
-	"github.com/e2eterraformprovider/terraform-provider-tir/constants"
-	"github.com/e2eterraformprovider/terraform-provider-tir/models"
-	"github.com/e2eterraformprovider/terraform-provider-tir/client"
+
 	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/validation"
+	"github.com/jatinkoli15/terraform-provider-cello/client"
+	"github.com/jatinkoli15/terraform-provider-cello/constants"
+	"github.com/jatinkoli15/terraform-provider-cello/models"
 )
 
 func ResourceModel() *schema.Resource {

@@ -8,7 +8,119 @@ description: |-
 
 # tir_modelEndpoint (Resource)
 
+IR provides two methods for deploying containers that serve model API endpoints for AI inference services:
 
+Deploy Using Pre-built Containers (Provided by TIR)
+
+Before launching a service with TIR's pre-built containers, you need to create a TIR Model and upload the necessary model files. These containers are configured to automatically download model files from an EOS (E2E Object Storage) Bucket and start the API server. Once the endpoint is ready, you can make synchronous requests to the endpoint for inference. 
+Deploy using your own container
+
+You can launch an inference service using your own Docker image, either public or private. Once the endpoint is ready, you can make synchronous requests for inference. Optionally, you can attach a TIR model to automate the download of model files from an EOS bucket to the container. 
+
+## Example Usage
+
+```hcl
+
+ resource "tir_modelEndpoint" "name:string" {
+  # stop_inference = "start"
+
+  name                     = "name"
+  sku_name                 = "C3.2"
+  sku_type                 = "hourly"
+  committed_instance_policy = ""
+  committed_days           = 0
+  model_path               = ""
+  framework                = "PYTORCH"
+  model_id                 = tir_modelRepository.name.id
+   model_load_integration_id = tir_integration.name.id
+  cluster_type             = "tir-cluster"
+  storage_type             = "disk"
+  disk_path                = "/mnt/models"
+  sfs_path                 = "/shared/.cache"
+  # sfs_id                   = "1"
+  image_pull_policy        = "Always"
+  is_auto_scale_enabled    = false
+  replica                  = 1
+  committed_replicas      = 0
+  
+  auto_scale_policy {
+    # min_replicas = 1
+    # max_replicas = 5
+    # rules {
+        # Define rules as you needed.
+     }
+    # stability_period = 300
+    rules {
+
+    }
+  }
+
+  detailed_info {
+    # commands          = "[\"jatin\",\"rahul\"]"
+    # args              = ""
+    # hugging_face_id   = "BAAI/Aquila-7B"
+    server_version = "v0.9.0"
+    tokenizer         = ""
+    world_size        = 1
+    error_log         = true
+    info_log          = true
+    warning_log       = true
+    log_verbose_level = 1
+    model_serve_type  = ""
+    engine_args =  {
+      # Define engine_args as you needed.
+    }
+
+  }
+
+  is_readiness_probe_enabled  = false
+  is_liveness_probe_enabled   = false
+
+  readiness_probe {
+    # Define readiness as you need.
+  }
+
+  liveness_probe {
+   # Define liveness probe as you need.
+  }
+
+  resource_details {
+    disk_size = 100
+    mount_path = ""
+    env_variables {
+      key   = "HF_HdfsfOME"
+      value = "ENV_VALUE"
+      required = true
+      disabled = {
+        key   = true
+        value = false
+      }
+    }
+    env_variables {
+      key   = "HF_HOMsE"
+      value = "ENV_VALsUE"
+      required = true
+      disabled = {
+        key   = true
+        value = false
+      }
+    }
+  }
+
+  public_ip = "no"
+  container_type = "public"
+  private_cloud_id = "private_cloud_123"
+  custom_sku = {
+    "sku_name" = 1
+  }
+    team_id = <team_id : string>
+    project_id = <project_id:string>
+    active_iam = <active_iam:string>
+    location = "Delhi"
+    currency = "INR"
+}
+
+```
 
 
 

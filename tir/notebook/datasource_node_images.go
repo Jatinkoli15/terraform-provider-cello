@@ -4,7 +4,7 @@ import (
 	"context"
 	"log"
 
-	"github.com/e2eterraformprovider/terraform-provider-tir/client"
+	"github.com/jatinkoli15/terraform-provider-cello/client"
 
 	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
