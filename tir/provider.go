@@ -35,16 +35,16 @@ func Provider() *schema.Provider {
 			},
 		},
 		ResourcesMap: map[string]*schema.Resource{
-			"cello_notebook":        notebook.ResourceNode(),
+			"cello_node":        notebook.ResourceNode(),
 			"cello_eos":             dataset.ResourceEOS(),
-			"cello_modelRepository": modelRepo.ResourceModelRepo(),
-			"cello_modelEndpoint":   modelEndpoint.ResourceModel(),
+			"cello_model_repository": modelRepo.ResourceModelRepo(),
+			"cello_model_endpoint":   modelEndpoint.ResourceModel(),
 			"cello_integration":     integration.ResourceModelRepo(),
-			"cello_privateCluster":  privateCluster.ResourcePrivateCluster(),
+			"cello_private_cluster":  privateCluster.ResourcePrivateCluster(),
 		},
 		DataSourcesMap: map[string]*schema.Resource{
-			"tir_notebook":       notebook.DataSourceImages(),
-			"tir_notebook_plans": notebook.DataSourceSKUPlans(),
+			"tir_node_images":       notebook.DataSourceImages(),
+			"tir_node_plans": notebook.DataSourceSKUPlans(),
 		},
 		ConfigureFunc: providerConfigure, // setup the API Client
 	}
