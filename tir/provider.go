@@ -43,8 +43,8 @@ func Provider() *schema.Provider {
 			"cello_private_cluster":  privateCluster.ResourcePrivateCluster(),
 		},
 		DataSourcesMap: map[string]*schema.Resource{
-			"tir_node_images":       notebook.DataSourceImages(),
-			"tir_node_plans": notebook.DataSourceSKUPlans(),
+			"cello_node_images":       notebook.DataSourceImages(),
+			"cello_node_plans": notebook.DataSourceSKUPlans(),
 		},
 		ConfigureFunc: providerConfigure, // setup the API Client
 	}
