@@ -6,7 +6,7 @@ description: |-
   
 ---
 
-# tir_modelEndpoint (Resource)
+# tir_model_endpoint (Resource)
 
 IR provides two methods for deploying containers that serve model API endpoints for AI inference services:
 
@@ -21,8 +21,7 @@ You can launch an inference service using your own Docker image, either public o
 
 ```hcl
 
- resource "tir_modelEndpoint" "name:string" {
-  # stop_inference = "start"
+ resource "tir_model_endpoint" "name:string" {
 
   name                     = "name"
   sku_name                 = "C3.2"

@@ -6,7 +6,7 @@ description: |-
   
 ---
 
-# tir_notebook (Resource)
+# tir_node (Resource)
 
 TIR Nodes are fully collaborative environments that make AI development possible. They combine the power of containers, Jupyter Labs, and AI/ML frameworks to create a readily usable workspace for you and your entire team.
 
@@ -14,7 +14,7 @@ TIR Nodes are fully collaborative environments that make AI development possible
 ## Example Usage
 ```hcl
 
-resource "tir_notebook" "name:string"{
+resource "tir_node" "name:string"{
     node_name = "node-22"
     image_name ="Diffusers"
     image_version ="v0.27.2"
@@ -22,13 +22,11 @@ resource "tir_notebook" "name:string"{
     location = "Delhi"
     sku_name = "C3.4"
     sku_type = "hourly"
-    instance_type = "paid_usage"
-    committed_instance_policy = ""
-    committed_days =0
+    instance_type = "paid_usage" / "free_usage"
     team_id = <team_id : string>
     project_id = <project_id:string>
     active_iam = <active_iam:string>
-    stop_node = false // must be false at the time of creation
+    stop_node = false // must be false at the time of creation or omit the field
 }
 
 ```

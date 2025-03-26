@@ -6,7 +6,7 @@ description: |-
   
 ---
 
-# tir_modelRepository (Resource)
+# tir_model_repository (Resource)
 
 TIR Model Repositories are designed to store model weights and configuration files. These repositories can be backed by either E2E Object Storage (EOS) or PVC storage within a Kubernetes environment.
 
@@ -16,7 +16,7 @@ TIR Model Repositories are designed to store model weights and configuration fil
 
 ```hcl
 
- resource "tir_modelRepository" "jn"{
+ resource "tir_model_repository" "jn"{
     name = "soss"
     storage_type = "new"
     model_type = "pytorch"

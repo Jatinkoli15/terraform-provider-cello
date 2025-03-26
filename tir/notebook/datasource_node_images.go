@@ -2,8 +2,6 @@ package notebook
 
 import (
 	"context"
-	"log"
-
 	"github.com/jatinkoli15/terraform-provider-cello/client"
 
 	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
@@ -75,11 +73,6 @@ func dataSourceImagesRead(ctx context.Context, d *schema.ResourceData, m interfa
 	// Setting the images data to Terraform state
 	d.Set("images", images)
 	d.SetId("images")
-	// d.Set("category","notebooks")
-	log.Println("get images", d.Get("images"))
-	log.Println("cate", d.Get("category"))
-	log.Println("hello")
-
 	return diags
 
 }
