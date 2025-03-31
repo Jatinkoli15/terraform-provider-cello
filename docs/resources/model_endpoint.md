@@ -281,7 +281,7 @@ Optional:
 ## Supported Frameworks
 
   - TRITON = 'triton',
-  - PYTORCH = 'pytorch', // curl, grpc
+  - PYTORCH = 'pytorch', 
   - LLAMA = 'llma',
   - CODELAMA = 'codellama',
   - STABLE_DIFFUSION = 'stable_diffusion',

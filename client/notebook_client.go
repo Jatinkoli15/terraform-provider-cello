@@ -300,6 +300,7 @@ func (c *Client) GetPlans(item *models.ImageDetail, activeIAM string) (map[strin
 	params.Add("apikey", c.Api_key)
 	params.Add("active_iam", activeIAM)
 	params.Add("service", "notebook")
+	params.Add("is_jupyterlab_enabled","true")
 	req.URL.RawQuery = params.Encode()
 	req.Header.Add("Authorization", "Bearer "+c.Auth_token)
 	req.Header.Add("Content-Type", "application/json")
