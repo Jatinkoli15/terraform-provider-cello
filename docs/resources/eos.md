@@ -33,7 +33,7 @@ resource "tir_eos" <name:string> {
 
 ### Required
 
-- `active_iam` (String) The IAM (Identity and Access Management) role associated with the EOS resource.
+- `active_iam` (String) The IAM (Identity and Access Management) role associated with the EOS resource.[Get iams here](https://registry.terraform.io/providers/e2eterraformprovider/tir/latest/docs/resources/integration)
 - `name` (String) The name of the EOS (Elastic Object Storage) resource. This is a required field and must be unique.
 - `project_id` (String) The ID of the project where the EOS resource is deployed.
 - `storage_type` (String) The type of storage for the EOS resource. Supported values are 'new_bucket' for managed storage, 'existing_bucket' for E2E S3, and 'disk' for PVC (Persistent Volume Claim).
